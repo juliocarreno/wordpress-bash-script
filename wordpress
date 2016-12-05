@@ -1,0 +1,54 @@
+#!/bin/bash
+
+declare -a files=( 
+"404.php"
+"archive.php" 
+"author.php" 
+"category.php" 
+"comments.php"
+"content.php"
+"content-aside.php"
+"content-image.php"
+"content-link.php"
+"content-none.php"
+"content-page.php"
+"content-quote.php"
+"content-status.php"
+"footer.php" 
+"functions.php" 
+"header.php"
+"index.php" 
+"page.php"
+"readme.txt"
+"search.php" 
+"searchform.php" 
+"sidebar.php" 
+"single.php" 
+"tag.php" 
+"gulpfile.js"
+)
+
+declare -a folders=(
+"css"
+"js"
+"img"
+"parts"
+"inc"
+"resources"
+"resources/js"
+"resources/css"
+"languages"
+)
+
+if [ $1 = "new" ]
+then
+	mkdir $2
+	for folder in "${folders[@]}"
+	do
+		mkdir $2/$folder
+	done
+	for file in "${files[@]}"
+	do
+		touch $2/$file
+	done
+fi
