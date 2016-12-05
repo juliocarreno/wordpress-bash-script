@@ -1,4 +1,5 @@
 #!/bin/bash
+#created by: Julio Carreño
 
 declare -a files=( 
 "404.php"
